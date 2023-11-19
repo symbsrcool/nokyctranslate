@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>No KYC Translate</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/ico" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+
+    <style>
+    .bg-green {
+      background-color: #28a745;
+    }
+    .navbar-brand-custom {
+      color: #fff !important;
+      text-align: center;
+      flex-grow: 1;
+    }
+  </style>
+
+</head>
+<body class="code-snippets-visible">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">NoKYCTranslate.com</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+<!--        <li class="nav-item">-->
+<!--        <a class="nav-link" href="/account">My Account</a>-->
+<!--      </li>-->
+<!--        <li>-->
+<!--            <a class="nav-link" href="/about/languages">Languages</a>-->
+<!--        </li>-->
+<!--      <li class="nav-item">-->
+<!--        <a class="nav-link" href="/about/tos">Terms of Service</a>-->
+<!--      </li>-->
+<!--        <li class="nav-item">-->
+<!--        <a class="nav-link" href="/about/privacy">Privacy Policy</a>-->
+<!--        </li>-->
+    </ul>
+  </div>
+</nav>
+
+<!--  {% if payment_redirect %}-->
+<!--  <nav class="navbar navbar-expand-lg bg-green">-->
+<!--  <a class="navbar-brand-custom"> Thanks for your payment! If you provided your Nostr npub we'll DM you a confirmation.</a>-->
+<!--  </nav>-->
+<!--{% endif %}-->
+
+  <nav class="navbar navbar-expand-lg bg-green">
+    <a class="navbar-brand-custom">NoKYCTranslate.com will be shutting down on December 31, 2023. Registration and adding payments have been disabled. Those who still have satoshis remaining on an API key can use them until the end of the year (the translator is still running). Thank you for all the support. If you are looking for translations for the Damus client, please check out https://translate.nostr.wine/ </a>
+</nav>
+
+  <div class="container">
+
+    <section class="mt-4">
+
+      <h1 class="title text-center">AI-powered Translations for Nostr</h1>
+        <p class="text-center">High-quality Translations. Pay with Bitcoin/Lightning. No KYC.</p>
+      <br>
+
+        <div class="card-deck">
+    <div class="card border-light">
+    <img class="card-img-top" style="width: 100px; height: 100px; margin: 0 auto;" src="images/password.svg" alt="Wallet Icon">
+    <div class="card-body">
+      <h5 class="card-title text-center">Step 1: Generate a New API Key</h5>
+      <p class="card-text text-center">Your API Key is how you access our translation services. Keep it safe and secure, and do not share it with others.</p>
+      </div>
+  </div>
+
+
+
+  <div class="card border-light">
+    <img class="card-img-top" style="width: 100px; height: 100px; margin: 0 auto;" src="images/bitcoin-logo.svg" alt="Bitcoin Logo">
+    <div class="card-body">
+      <h5 class="card-title text-center">Step 2: Add Funds (Satoshis)</h5>
+      <p class="card-text text-center">Translation costs are automatically deducted as you translate notes and other stuff in your Nostr app. Cost is 0.1 satoshi per character.</p>
+      </div>
+  </div>
+
+  <div class="card border-light">
+    <img class="card-img-top" style="width: 100px; height: 100px; margin: 0 auto;" src="images/nostr_logo_blk_wht_rnd.svg" alt="Nostr Logo">
+    <div class="card-body">
+      <h5 class="card-title text-center">Step 3: Change Nostr Settings</h5>
+      <p class="card-text text-center">Insert your API Key and our translation URL into your Nostr App. Works with any Nostr app that supports LibreTranslate. So far we've verified these Nostr apps: <b>Damus</b></p>
+      </div>
+  </div>
+</div>
+    </section>
+
+<!--<section class="mt-4" id="key_generation">-->
+<!--    <h2 class="title text-center">Step 1. Generate a New API Key</h2>-->
+<!--    <p class="text-center">Or check the balance of an existing API Key</p>-->
+<!--    <br>-->
+<!--    <div class="container">-->
+<!--    <form action="{% url 'registration:index' %}#key_generation" method="post">-->
+<!--        {% csrf_token %}-->
+<!--        <div class="form-group row justify-content-center">-->
+<!--            <label for="apiKeyInput" class="col-form-label">API Key</label>-->
+<!--            <div class="input-group col-sm-8">-->
+<!--                <input type="text" class="form-control" name="api_key" id="apiKeyInput" placeholder="Paste your existing API Key here or click Generate to create one" value="{% if api_key %}{{ api_key }}{% endif %}">-->
+<!--                <div class="input-group-append">-->
+<!--                    <input type="hidden" name="type" value="generate">-->
+<!--                    <button type="submit" class="btn btn-primary" name="generate_button">Generate a new API Key</button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="form-group row justify-content-center">-->
+<!--            <label for="balanceInput" class="col-form-label">Balance</label>-->
+<!--            <div class="input-group col-sm-8">-->
+<!--                <input type="text" class="form-control" id="balanceInput" placeholder="{% if show_balance %} {{ sats_balance }} {% else %} 0.0 {% endif %}" readonly>-->
+<!--                <div class="input-group-append">-->
+<!--                  <button type="submit" class="btn btn-primary" name="check_button">Check Balance</button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        </form>-->
+<!--        <div class="form-group row justify-content-center">-->
+<!--            <div class="input-group col-sm-4">-->
+<!--                <div class="input-group-prepend">-->
+<!--                    <button type="submit" class="btn btn-primary" onclick="copyToClipboard()" name="copy_button">Copy API Key</button>-->
+<!--                </div>-->
+<!--                <div class="input-group-append">-->
+<!--                    <button type="submit" class="btn btn-primary" onclick="saveAPIKey()" name="download_button">Download API Key</button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        </div>-->
+<!--</section>-->
+<!--      {% if error %}-->
+<!--      <div class="alert alert-danger" role="alert">-->
+<!--        <h3 class="text-center">{{ error }}</h3>-->
+<!--      </div>-->
+<!--      {% endif %}-->
+<!--      {% if message %}-->
+<!--        <div class="alert alert-success" role="alert">-->
+<!--            <h3  class="text-center">{{ message }}</h3>-->
+<!--        </div>-->
+<!--      {% endif %}-->
+<!--<hr>-->
+<!--    <section class="mt-4">-->
+<!--    <h2 class="title text-center">Step 2: Add funds</h2>-->
+<!--        <p class="text-center">We accept both bitcoin on-chain and lightning. We recommend starting with 5k satoshis.</p>-->
+<!--        <p class="text-center"><b>Optional:</b> Providing your nostr npub will allow our bot to notify you via DM when your balance is low.</p>-->
+<!--        <p class="text-center">You will have an option to save your receipt after payment.</p>-->
+<!--    <br>-->
+<!--    <form action="payment/" method="post">-->
+<!--        {% csrf_token %}-->
+<!--        <div class="form-group row justify-content-center">-->
+<!--            <label for="apiKeyInputPayment" class="col-form-label">&nbsp;&nbsp;&nbsp;&nbsp;API Key</label>-->
+<!--            <div class="input-group col-sm-8">-->
+<!--                <input type="text" class="form-control" id="apiKeyInputPayment" name="api_key" placeholder="Paste your existing API Key here" value="{% if api_key %}{{ api_key }}{% endif %}">-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="form-group row justify-content-center">-->
+<!--            <label for="npubInput" class="col-form-label">Nostr npub</label>-->
+<!--            <div class="input-group col-sm-8">-->
+<!--                <input type="text" class="form-control" name="npub" id="npubInput" placeholder="Paste your npub here (optional)" value="">-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="form-group row justify-content-center">-->
+<!--            <label for="paymentInput" class="col-form-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Amount</label>-->
+<!--            <div class="input-group col-sm-8">-->
+<!--                <input type="number" class="form-control" name="amount" id="paymentInput" value="5000" min="3000">-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="form-group row justify-content-center">-->
+<!--            <div class="col-sm-2"></div>-->
+<!--            <div class="col-sm-7">-->
+<!--                <div class="form-check">-->
+<!--                    <input class="form-check-input" type="checkbox" id="tos" name="tos" required="required">-->
+<!--                    <label class="form-check-label" for="tos">-->
+<!--                        I agree to the <a href="/about/tos">Terms of Service</a> and <a href="/about/privacy">Privacy Policy</a> <font color="red">(required)</font>-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-sm-2"></div>-->
+<!--        </div>-->
+<!--      <div class="form-group row justify-content-center">-->
+<!--            <div class="col-sm-2"></div>-->
+<!--            <div class="col-sm-7">-->
+<!--                <div class="form-check">-->
+<!--                    <input class="form-check-input" type="checkbox" id="saved_key" name="saved_key" required="required">-->
+<!--                    <label class="form-check-label" for="saved_key">-->
+<!--                        I have saved my API Key somewhere safe <font color="red">(required)</font>-->
+<!--                    </label>-->
+<!--                    <div id="alert-box" class="alert alert-danger" style="display:none">-->
+<!--                        <b>Warning!</b> After payment the API Key will not be displayed again. Make sure you've saved it!-->
+<!--                    </div>-->
+
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-sm-2"></div>-->
+<!--        </div>-->
+<!--      <div class="form-group row justify-content-center">-->
+<!--            <div class="col-sm-2"></div>-->
+<!--            <div class="col-sm-7">-->
+<!--                <div class="form-check">-->
+<!--                    <input class="form-check-input" type="checkbox" id="safety" required="required">-->
+<!--                    <label class="form-check-label" for="safety">-->
+<!--                        I understand that if I lose my API Key, I will be unable to recover my funds. <font color="red">(required)</font>-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-sm-2"></div>-->
+<!--        </div>-->
+<!--      <div class="form-group row justify-content-center">-->
+<!--    <div class="">-->
+<!--      <button type="submit" class="btn btn-primary">Submit Payment</button>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--    </form>-->
+<!--</section>-->
+<hr>
+      <section class="mt-4">
+          <h2 class="title text-center">Step 3: Update your Nostr App Settings</h2>
+        <p class="text-center">Paste your API Key and our translation URL: <b>https://translate.nokyctranslate.com</b> into your Nostr App. </p>
+          <p class="text-center">See the guides belows for specific instructions per each Nostr App.</p>
+    <br>
+          <div class="card">
+  <h5 class="card-header">Setup Instructions to use NoKYCTranslate with the <a href="https://damus.io/">Damus Nostr App</a></h5>
+  <div class="card-body">
+    <h5 class="card-title">Step-by-Step Instructions</h5>
+    <p class="card-text"><ol>
+          <li>Tap your profile pic in the top left</li>
+          <li>Tap Settings</li>
+          <li>Tap Translations</li>
+          <ul>
+            <li><b>Service:</b> NoKYCTranslate.com</li>
+            <li><b>API Key:</b> (Enter your API Key from above, copy and paste)</li>
+            <li><b>Automatically translate notes:</b> If you turn this on then notes will be translated as you scroll and the note will say "Translated from ...." and then underneath will be the translation. If you keep this feature off, then you can manually translate notes by clicking the "..." at the top of any note and selecting "Translate".</li>
+          </ul>
+      <li>You should be good to go and start to see apps being translated!</li>
+        </ol>
+
+<!--    <video controls width="786" height="1702">-->
+<!--        <source src="{% static 'registration/videos/instructional_video.mp4' %}" type="video/mp4">-->
+<!--        Your browser does not support the video tag.-->
+<!--    </video>-->
+
+        <p><b>If you have any trouble, please message us on Nostr!</b></p></p>
+  </div>
+</div>
+        <br>
+          <div class="card">
+          <h5 class="card-header">Instructions to use NoKYCTranslate with other Nostr Apps are forthcoming</h5>
+  <div class="card-body">
+    <p class="card-text text-center">Please reach out to us if you can help us write instructions on how to use this service with other Nostr Apps.</p>
+  </div>
+</div>
+      </section>
+
+   <hr>
+
+      <section>
+            <div class="card-deck">
+                <div class="card border-light">
+    <img class="card-img-top" style="width: 100px; height: 100px; margin: 0 auto;" src="images/libre_translate_logo_flipped.svg" alt="LibreTranslate Logo">
+    <div class="card-body">
+      <h5 class="card-title text-center">Same API as LibreTranslate</h5>
+      <p class="card-text text-center">Get started immediately with any client that already supports LibreTranslate.</p>
+      </div>
+  </div>
+  <div class="card border-light">
+    <img class="card-img-top" style="width: 100px; height: 100px; margin: 0 auto;" src="images/bitcoin-logo.svg" alt="Bitcoin Logo">
+    <div class="card-body">
+      <h5 class="card-title text-center">0.1 satoshi per character</h5>
+      <p class="card-text text-center">A 100 character note costs 10 satoshis (less than $0.01 USD)</p>
+      </div>
+  </div>
+
+  <div class="card border-light">
+    <img class="card-img-top" style="width: 100px; height: 100px; margin: 0 auto;" src="registration/images/nkt_logo.png" alt="Nostr Logo">
+    <div class="card-body">
+      <h5 class="card-title text-center">Follow us on Nostr</h5>
+      <p class="card-text text-center">npub109pkdu0k0dau2cz063lzrgn7dl9l7lk8u7njcm2v8pk4pl2a9uzqf6u4w5</p>
+      </div>
+  </div>
+</div>
+      </section>
+    </div>
+
+<footer style="background-color: #E6E6FA;" class="bg-secondary text-center py-3">
+    Thanks for visiting - find us on Nostr: npub109pkdu0k0dau2cz063lzrgn7dl9l7lk8u7njcm2v8pk4pl2a9uzqf6u4w5
+  </footer>
+
+<!--  <script src="{% static 'registration/assets/dist/js/jquery-3.5.1.slim.min.js' %}"></script>-->
+<!--        <script src="{% static 'registration/assets/dist/js/popper.min.js' %}"></script>-->
+<!--        <script src="{% static 'registration/assets/dist/js/bootstrap.min.js' %}"></script>-->
+
+  <script src="{% static 'bootstrap/js/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#saved_key').on('change', function() {
+            if ($(this).is(':checked')) {
+                $('#alert-box').show();
+            } else {
+                $('#alert-box').hide();
+            }
+        });
+    });
+</script>
+
+<script>
+    function saveAPIKey() {
+      // Get the text from the publicKey textbox
+      const publicKey = document.getElementById("apiKeyInput").value;
+
+      // Create a new Blob object with the publicKey text as its content
+      const blob = new Blob([publicKey], { type: "text/plain;charset=utf-8" });
+
+      // Create a new URL object from the Blob object
+      const url = URL.createObjectURL(blob);
+
+      // Create a new anchor element to use as the download link
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "nokyctranslate_apikey.txt";
+
+      // Simulate a click on the download link to trigger the file download
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      // Revoke the URL object to free up memory
+      URL.revokeObjectURL(url);
+
+      // Set the message element's text content to inform the user that the file has been saved
+      const message = document.getElementById("message");
+      message.textContent = "Your API Key has been saved.";
+    }
+  </script>
+
+<script>
+    function copyToClipboard() {
+  const inputBox = document.getElementById("apiKeyInput");
+  navigator.clipboard.writeText(inputBox.value);
+}
+
+</script>
+
+<!--<script-->
+<!--	src="https://nostri.chat/public/bundle.js"-->
+<!--	// YOUR PUBKEY IN HEX FORMAT-->
+<!--	data-website-owner-pubkey="794366f1f67b7bc5604fd47e21a27e6fcbff7ec7e7a72c6d4c386d50fd5d2f04"-->
+<!--	// THE TYPE OF CHAT YOU WANT: GLOBAL or DMs-->
+<!--	data-chat-type="GLOBAL"-->
+<!--	// If you use GLOBAL you can choose set a comma-separated list of hashtags-->
+<!--	data-chat-tags="translate,nokyctranslate,ai,damus"-->
+<!--	// Relays you'd like to use, change this this as you wish-->
+<!--	data-relays="wss://relay.f7z.io,wss://nos.lol,wss://relay.nostr.info,wss://nostr-pub.wellorder.net,wss://relay.current.fyi,wss://relay.nostr.band"-->
+<!--&gt;</script>-->
+<!--<link rel="stylesheet" href="https://nostri.chat/public/bundle.css">-->
+
+</body>
+</html>
